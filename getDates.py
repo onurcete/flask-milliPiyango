@@ -18,4 +18,4 @@ def getDates():
     for i in range(len(data)):
         dates.append(data[i]["tarih"])
     
-    return dates
+    return dates 
