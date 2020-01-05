@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{  sayfabasligi  }}</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--
+        <form  method='POST'  action='/result'>
+                <table>
+                        <p>Milli  Piyango  Sonuç  Sorgula</p>
+                        <tr>
+                                <td>Kupon  Numarası:</td>
+                                <td><input  name="kuponNo"  type="TEXT"  width="10"</td>
+                        </tr>
+                </table>
+                <p><input  value="Sorgula"  type="SUBMIT"></p>
+        </form>-->
+
+    <div class="container">
+        <h5 class="card-header  info-color  blue-text  text-center  py-4">
+            <strong>Milli Piyango Sonuç Sorgula</strong>
+        </h5>
+        <!--Card  content-->
+        <div class="card-body  px-lg-5  pt-15">
+            <!--  Form  -->
+            <form class="text-center" style="color:  #757575;" method='POST' action='/result'>
+                <!--  Email  -->
+                <div class="md-form">
+                    <label for="materialLoginFormEmail">Kupon Numarası:</label>
+                    <input type="TEXT" name="kuponNo" id="materialLoginFormEmail" class="form-control">
+                </div>
+                <label for="materialLoginFormEmail">Tarih:</label>
+                
+                <div class="md-form">
+                    <select id="materialLoginFormEmail" class="form-control" name="tarihNo">
+                        {% for x in items %}
+                        <option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    
+                <!--  Sign  in  button  -->
+                <button class="btn  btn-outline-info  btn-rounded  btn-block  my-4  waves-effect  z-depth-0"
+                    type="submit">Sorgula</button>
+            </form>
+            <!--  Form  -->
+        </div>
+    </div>
+</body>
+
+</html>
