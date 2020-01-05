@@ -9,7 +9,7 @@ def anaSayfa():
     return render_template("index.html",sayfabasligi="Ana Sayfa",items=dates)
 
 @app.route("/result",methods=['POST'])
-def result():
+def result(): 
     x=str(request.form['kuponNo'])
     y=str(request.form['tarihNo'])
     mgm = milliPiyango.conn(x,y)
